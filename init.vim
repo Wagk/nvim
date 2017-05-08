@@ -40,6 +40,9 @@ call plug#begin()
 	Plug 'vim-airline/vim-airline'
 	Plug 'wellle/targets.vim'
 
+	"  neovim only things
+	Plug 'hkupty/nvimux'
+
 call plug#end()
 
 " Attempt to determine the type of a file based on its name and possibly its
@@ -145,7 +148,7 @@ set cmdheight=2
 set number
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+" set notimeout ttimeout ttimeoutlen=200
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
@@ -175,13 +178,6 @@ set autoread
 
 " No swap files
 set noswapfile
-
-set guioptions=c
-" set guioptions-=m  "remove menu bar
-" set guioptions-=T  "remove toolbar
-" set guioptions-=r  "remove right-hand scroll bar
-" set guioptions-=L  "remove left-hand scroll bar
-" set guioptions-=M
 
 " yank straight to system clipboard
 set clipboard=unnamed
@@ -221,3 +217,8 @@ nmap <leader>a <Plug>(EasyAlign)
 " maps ctrl-J to break a line at that point
 nnoremap <NL> i<CR><ESC>
 
+" some nvim specific configs
+set inccommand=nosplit
+
+" terminal stuff
+:tnoremap <Esc> <C-\><C-n>
