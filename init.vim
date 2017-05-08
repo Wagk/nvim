@@ -1,4 +1,3 @@
-
 " URL: http://vim.wikia.com/wiki/Example_vimrc
 " Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
 " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -28,20 +27,16 @@ call plug#begin()
 
 	Plug 'Raimondi/delimitMate'
 	Plug 'junegunn/vim-easy-align'
-	Plug 'mattn/webapi-vim'                             " curl/wget tooling
 	Plug 'michaeljsmith/vim-indent-object'
-	Plug 'myusuf3/numbers.vim'
 	Plug 'nelstrom/vim-visual-star-search'              " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'tmhedberg/SimpylFold'
 	Plug 'tpope/vim-abolish'
-	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-surround'
-	Plug 'tpope/vim-unimpaired'
 	Plug 'vim-airline/vim-airline'
 	Plug 'wellle/targets.vim'
 
