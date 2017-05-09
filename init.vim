@@ -39,9 +39,13 @@ call plug#begin()
 	Plug 'tpope/vim-surround'
 	Plug 'vim-airline/vim-airline'
 	Plug 'wellle/targets.vim'
+	Plug 'ctrlpvim/ctrlp.vim'
 
-	"  neovim only things
+	" neovim only things
 	Plug 'hkupty/nvimux'
+
+	" maintaining this might be troublesome
+	Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -119,7 +123,7 @@ set shiftwidth=4
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, ilocksct does what most users
 " coming from other editors would expect.
-set nostartofline
+"set nostartofline
 
 " Display the cursor position on the last line of the screen or in the status
 " line of a window
@@ -160,8 +164,8 @@ xnoremap P Pgvy
 " Normalize Y operation with D
 :map Y y$
 
-" Font and Fontsize
-set guifont=Consolas:h11
+" maps ctrl-J to break a line at that point
+nnoremap <NL> i<CR><ESC>
 
 " Windows splitting
 set splitbelow
@@ -214,8 +218,8 @@ nnoremap <silent> <leader>[ :Gpull<CR>
 vmap <leader>a <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
 
-" maps ctrl-J to break a line at that point
-nnoremap <NL> i<CR><ESC>
+" CtrlP mappings
+let g:ctrlp_map = '<leader>w'
 
 " some nvim specific configs
 set inccommand=nosplit
