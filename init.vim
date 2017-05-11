@@ -177,6 +177,10 @@ set foldopen-=block
 set nofoldenable
 let c_no_comment_fold = 1
 
+" Solarized
+set background=dark
+colorscheme solarized
+
 " Realtime updates
 set autoread
 
@@ -211,8 +215,6 @@ let g:airline#extensions#clock#updatetime = 500
 " Statusline
 set statusline=%{fugitive#statusline()}
 nnoremap <silent> <leader>, :Gstatus<CR>
-nnoremap <silent> <leader>] :Gpush<CR>
-nnoremap <silent> <leader>[ :Gpull<CR>
 
 " Easyalign mappings
 vmap <leader>a <Plug>(EasyAlign)
