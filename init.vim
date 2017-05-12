@@ -25,7 +25,7 @@ call plug#begin()
 	Plug 'altercation/vim-colors-solarized'
 	Plug 'vim-airline/vim-airline-themes'
 
-	Plug 'Raimondi/delimitMate'
+	Plug 'Raimondi/delimitMate' " match parens
 	Plug 'junegunn/vim-easy-align'
 	Plug 'michaeljsmith/vim-indent-object'
 	Plug 'nelstrom/vim-visual-star-search'              " use  # and * on visual selections
@@ -148,8 +148,8 @@ set t_vb=
 " press <Enter> to continue
 set cmdheight=2
 
-" Display line numbers on the left
-set number
+" Don't display line numbers on the left
+set nonumber
 
 " Quickly time out on keycodes, but never time out on mappings
 " set notimeout ttimeout ttimeoutlen=200
@@ -193,6 +193,9 @@ set clipboard=unnamed
 " Make <space> leader
 nnoremap <space> <nop>
 let mapleader="\<space>"
+
+" Map noh to something
+nnoremap <leader>/ :noh<CR>
 
 " Timestamp Keybindings
 nnoremap <leader>t i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
