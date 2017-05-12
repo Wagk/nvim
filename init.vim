@@ -23,7 +23,7 @@ call plug#begin()
 
 	" colorschemes
 	Plug 'altercation/vim-colors-solarized'
-	Plug 'vim-airline/vim-airline-themes'
+	"Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'Raimondi/delimitMate' " match parens
 	Plug 'junegunn/vim-easy-align'
@@ -37,7 +37,7 @@ call plug#begin()
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-surround'
-	Plug 'vim-airline/vim-airline'
+	"Plug 'vim-airline/vim-airline'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 
@@ -171,10 +171,10 @@ nnoremap <NL> i<CR><ESC>
 set splitbelow
 set splitright
 
-" Folding settings
+"" Folding settings
 set foldmethod=syntax
-set foldopen-=block
-set nofoldenable
+"set foldopen-=block
+"set nofoldenable
 let c_no_comment_fold = 1
 
 " Solarized
@@ -210,13 +210,13 @@ let delimitMate_expand_cr = 1
 " always update working directory of vim files
 set autochdir
 
-" airline things
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#clock#format = '%Y-%m-%dT%H:%M:%S'
-let g:airline#extensions#clock#updatetime = 500
+"" airline things
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#clock#format = '%Y-%m-%dT%H:%M:%S'
+"let g:airline#extensions#clock#updatetime = 500
 
-" Statusline
-set statusline=%{fugitive#statusline()}
+" fugitive
+"set statusline=%{fugitive#statusline()}
 nnoremap <silent> <leader>, :Gstatus<CR>
 
 " Easyalign mappings
@@ -224,10 +224,14 @@ vmap <leader>a <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
 
 " CtrlP mappings
-let g:ctrlp_map = '<leader>w'
+let g:ctrlp_map = '<leader>e'
 
 " some nvim specific configs
 set inccommand=nosplit
 
 " terminal stuff
 :tnoremap <Esc> <C-\><C-n>
+:nnoremap <C-c> i<C-c><C-\><C-n>
+
+" simplify finding an init file
+command! Init tabe $MYVIMRC
