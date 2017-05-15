@@ -47,6 +47,11 @@ call plug#begin()
 	" maintaining this might be troublesome
 	Plug 'Valloric/YouCompleteMe'
 
+	" Japanese text insertion
+	" にほんごはvimmuです。
+	Plug 'tyru/skk.vim'
+	Plug 'tyru/skkdict.vim'
+
 call plug#end()
 
 " Attempt to determine the type of a file based on its name and possibly its
@@ -119,6 +124,7 @@ set autoindent
 "set expandtab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, ilocksct does what most users
@@ -164,7 +170,7 @@ xnoremap P Pgvy
 " Normalize Y operation with D
 :map Y y$
 
-" Bind ; to :
+" Bind ; to :, save a keystroke, save a life
 nnoremap ; :
 
 " maps ctrl-J to break a line at that point
@@ -178,7 +184,7 @@ set splitright
 set foldmethod=syntax
 "set foldopen-=block
 "set nofoldenable
-let c_no_comment_fold = 1
+"let c_no_comment_fold = 1
 
 " Solarized
 set background=dark
@@ -198,7 +204,7 @@ nnoremap <space> <nop>
 let mapleader="\<space>"
 
 " Map noh to something
-nnoremap <leader>/ :noh<CR>
+nnoremap <leader><Tab> :noh<CR>
 
 " Timestamp Keybindings
 nnoremap <leader>t i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
@@ -238,3 +244,4 @@ set inccommand=nosplit
 
 " simplify finding an init file
 command! Init tabe $MYVIMRC
+command! InitSource so $MYVIMRC
