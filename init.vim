@@ -164,6 +164,9 @@ xnoremap P Pgvy
 " Normalize Y operation with D
 :map Y y$
 
+" Bind ; to :
+nnoremap ; :
+
 " maps ctrl-J to break a line at that point
 nnoremap <NL> i<CR><ESC>
 
