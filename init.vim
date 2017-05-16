@@ -33,7 +33,6 @@ call plug#begin()
 	Plug 'scrooloose/nerdcommenter'
 	Plug 'tmhedberg/SimpylFold'
 	Plug 'tpope/vim-abolish'
-	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-surround'
@@ -41,11 +40,21 @@ call plug#begin()
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 
+	" Git things
+	Plug 'tpope/vim-fugitive'
+	Plug 'airblade/vim-gitgutter'
+
 	" neovim only things
 	Plug 'hkupty/nvimux'
 
 	" maintaining this might be troublesome
 	"Plug 'Valloric/YouCompleteMe'
+
+	" indent highlighting
+	Plug 'Yggdroot/indentLine'
+
+	" tags management
+	Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 
 	" Folding plugins
 	Plug 'rayburgemeestre/phpfolding.vim'
@@ -89,6 +98,7 @@ set hidden
 " set autowriteall
 
 " Better command-line completion
+set wildmode=longest,list,full
 set wildmenu
 
 " Show partial commands in the last line of the screen
@@ -213,7 +223,7 @@ nnoremap <silent> <Tab> :noh<CR>
 " Timestamp Keybindings
 inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
 nnoremap <F5> i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
-	
+
 " No wordwrap
 set wrap!
 set textwidth=0
