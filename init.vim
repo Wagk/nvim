@@ -45,7 +45,10 @@ call plug#begin()
 	Plug 'hkupty/nvimux'
 
 	" maintaining this might be troublesome
-	Plug 'Valloric/YouCompleteMe'
+	"Plug 'Valloric/YouCompleteMe'
+
+	" Folding plugins
+	Plug 'rayburgemeestre/phpfolding.vim'
 
 	" Japanese text insertion
 	" にほんごはvimmuです。
@@ -170,8 +173,9 @@ xnoremap P Pgvy
 " Normalize Y operation with D
 :map Y y$
 
-" Bind ; to :, save a keystroke, save a life
-nnoremap ; :
+" Bind ; to :
+" We don't do this because ; in normal mode is next find
+"nnoremap ; :
 
 " maps ctrl-J to break a line at that point
 nnoremap <NL> i<CR><ESC>
@@ -204,11 +208,12 @@ nnoremap <space> <nop>
 let mapleader="\<space>"
 
 " Map noh to something
-nnoremap <leader><Tab> :noh<CR>
+nnoremap <silent> <Tab> :noh<CR>
 
 " Timestamp Keybindings
-nnoremap <leader>t i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
-
+inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
+nnoremap <F5> i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
+	
 " No wordwrap
 set wrap!
 set textwidth=0
@@ -219,13 +224,7 @@ let delimitMate_expand_cr = 1
 " always update working directory of vim files
 set autochdir
 
-"" airline things
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#clock#format = '%Y-%m-%dT%H:%M:%S'
-"let g:airline#extensions#clock#updatetime = 500
-
 " fugitive
-"set statusline=%{fugitive#statusline()}
 nnoremap <silent> <leader>, :Gstatus<CR>
 
 " Easyalign mappings
@@ -244,4 +243,3 @@ set inccommand=nosplit
 
 " simplify finding an init file
 command! Init tabe $MYVIMRC
-command! InitSource so $MYVIMRC
