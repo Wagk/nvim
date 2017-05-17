@@ -249,8 +249,10 @@ let g:ctrlp_map = '<leader>e'
 set inccommand=nosplit
 
 " terminal stuff
-:tnoremap <Esc> <C-\><C-n>
-:nnoremap <C-c> i<C-c><C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+nnoremap <C-c> i<C-c><C-\><C-n>
+command! Vspterm vsp | terminal
+command! Spterm	sp | terminal
 
 " simplify finding an init file
 command! Init tabe $MYVIMRC
