@@ -39,6 +39,7 @@ call plug#begin()
 	"Plug 'vim-airline/vim-airline'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'FooSoft/vim-argwrap'
 
 	" Git things
 	Plug 'tpope/vim-fugitive'
