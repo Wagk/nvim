@@ -22,7 +22,7 @@ syntax on
 call plug#begin()
 
 	" colorschemes
-	Plug 'iCyMind/NeoSolarized'
+	Plug 'altercation/vim-colors-solarized'
 
 	Plug 'Raimondi/delimitMate' " match parens
 	Plug 'junegunn/vim-easy-align'
@@ -34,11 +34,12 @@ call plug#begin()
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-surround'
-	"Plug 'vim-airline/vim-airline'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
-	Plug 'romainl/vim-cool'
+
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
 	" Directory searching
 	Plug 'tpope/vim-vinegar'
@@ -203,11 +204,10 @@ set foldmethod=syntax
 " Solarized
 " NeoSolarized things
 try
-	set termguicolors
 	set background=dark
-	colorscheme NeoSolarized
+	colorscheme solarized
 catch
-	echo "NeoSolarized Not Installed!"
+	echo "Colorscheme Not Installed!"
 endtry
 
 " Realtime updates
@@ -229,6 +229,13 @@ nnoremap <silent> <Tab> :noh<CR>
 " Timestamp Keybindings
 inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
 nnoremap <F5> i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
+
+" vim-airline
+try
+	let g:airline_theme = 'solarized'
+catch
+	echo "vim-airline not installed!"
+endtry
 
 " No wordwrap
 set wrap!
