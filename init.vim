@@ -38,6 +38,7 @@ call plug#begin()
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
+	Plug 'romainl/vim-cool'
 
 	" Directory searching
 	Plug 'tpope/vim-vinegar'
@@ -180,7 +181,7 @@ xnoremap p pgvy
 xnoremap P Pgvy
 
 " Normalize Y operation with D
-:map Y y$
+map Y y$
 
 " Bind ; to :
 " We don't do this because ; in normal mode is next find
