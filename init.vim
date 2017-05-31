@@ -248,11 +248,19 @@ let delimitMate_expand_cr = 1
 "set autochdir
 
 " fugitive
-nnoremap <silent> <leader>, :Gstatus<CR>
+try
+	nnoremap <silent> <leader>, :Gstatus<CR>
+catch
+	echo "fugitive not installed!"
+endtry
 
 " Easyalign mappings
-vmap <leader>a <Plug>(EasyAlign)
-nmap <leader>a <Plug>(EasyAlign)
+try
+	vmap <leader>a <Plug>(EasyAlign)
+	nmap <leader>a <Plug>(EasyAlign)
+catch
+	echo "Easyalign not installed!"
+endtry
 
 " Argwrap things
 try
