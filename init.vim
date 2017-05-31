@@ -22,8 +22,7 @@ syntax on
 call plug#begin()
 
 	" colorschemes
-	Plug 'altercation/vim-colors-solarized'
-	"Plug 'vim-airline/vim-airline-themes'
+	Plug 'iCyMind/NeoSolarized'
 
 	Plug 'Raimondi/delimitMate' " match parens
 	Plug 'junegunn/vim-easy-align'
@@ -201,8 +200,14 @@ set foldmethod=syntax
 "let c_no_comment_fold = 1
 
 " Solarized
-set background=dark
-colorscheme solarized
+" NeoSolarized things
+try
+	set termguicolors
+	set background=dark
+	colorscheme NeoSolarized
+catch
+	echo "NeoSolarized Not Installed!"
+endtry
 
 " Realtime updates
 set autoread
