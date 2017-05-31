@@ -51,12 +51,6 @@ call plug#begin()
 	" neovim only things
 	Plug 'hkupty/nvimux'
 
-	" maintaining this might be troublesome
-	"Plug 'Valloric/YouCompleteMe'
-
-	" indent highlighting
-	Plug 'Yggdroot/indentLine'
-
 	" tags management
 	Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
 
@@ -104,7 +98,7 @@ set hidden
 " set autowriteall
 
 " Better command-line completion
-set wildmode=longest,list,full
+set wildmode=longest,list:longest,full
 set wildmenu
 
 " Show partial commands in the last line of the screen
@@ -246,6 +240,13 @@ nnoremap <silent> <leader>, :Gstatus<CR>
 " Easyalign mappings
 vmap <leader>a <Plug>(EasyAlign)
 nmap <leader>a <Plug>(EasyAlign)
+
+" Argwrap things
+try
+	nnoremap <leader>q :Argwrap<CR>
+catch
+	echo "Argwrap not installed!"
+endtry
 
 " CtrlP mappings
 let g:ctrlp_map = '<leader>e'
