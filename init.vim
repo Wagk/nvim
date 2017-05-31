@@ -29,7 +29,7 @@ call plug#begin()
 	Plug 'michaeljsmith/vim-indent-object'
 	Plug 'nelstrom/vim-visual-star-search'              " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
-	Plug 'scrooloose/nerdcommenter'
+	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-abolish'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
@@ -270,7 +270,7 @@ endtry
 
 " Argwrap things
 try
-	nnoremap <leader>q :Argwrap<CR>
+	nnoremap <leader>q :ArgWrap<CR>
 catch
 	echo "Argwrap not installed!"
 endtry
