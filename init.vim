@@ -244,6 +244,12 @@ set textwidth=0
 " turn on delimitMate
 let delimitMate_expand_cr = 1
 
+" easytags
+try
+	let g:easytags_async = 1
+	let g:easytags_auto_highlight = 0
+endtry
+
 " always update working directory of vim files
 "set autochdir
 
