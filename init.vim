@@ -31,7 +31,6 @@ call plug#begin()
 	Plug 'nelstrom/vim-visual-star-search'              " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
 	Plug 'scrooloose/nerdcommenter'
-	Plug 'tmhedberg/SimpylFold'
 	Plug 'tpope/vim-abolish'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
@@ -40,6 +39,10 @@ call plug#begin()
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
+
+	" Directory searching
+	Plug 'tpope/vim-vinegar'
+	Plug 'dkprice/vim-easygrep'
 
 	" Git things
 	Plug 'tpope/vim-fugitive'
@@ -59,8 +62,10 @@ call plug#begin()
 
 	" Folding plugins
 	Plug 'rayburgemeestre/phpfolding.vim'
+	Plug 'tmhedberg/SimpylFold'
 
-	" Japanese text insertion
+	" Japanese text insertion (though it's pretty terrible and we should just
+	" use the OS one
 	" にほんごはvimmuです。
 	Plug 'tyru/skk.vim'
 	Plug 'tyru/skkdict.vim'
@@ -233,7 +238,7 @@ set textwidth=0
 let delimitMate_expand_cr = 1
 
 " always update working directory of vim files
-set autochdir
+"set autochdir
 
 " fugitive
 nnoremap <silent> <leader>, :Gstatus<CR>
