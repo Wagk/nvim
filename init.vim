@@ -29,7 +29,7 @@ call plug#begin()
 	Plug 'michaeljsmith/vim-indent-object'
 	Plug 'nelstrom/vim-visual-star-search'              " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
-	Plug 'tpope/vim-commentary'
+	Plug 'tomtom/tcomment_vim'
 	Plug 'tpope/vim-abolish'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
