@@ -45,6 +45,9 @@ call plug#begin()
 	" upgraded f, F, t, T
 	Plug 'rhysd/clever-f.vim'
 
+	" " completion manager
+	" Plug 'roxma/nvim-completion-manager'
+
 	" Directory searching
 	Plug 'tpope/vim-vinegar'
 	Plug 'dkprice/vim-easygrep'
@@ -289,8 +292,6 @@ set inccommand=nosplit
 " terminal stuff
 tnoremap <Esc> <C-\><C-n>
 nnoremap <C-c> i<C-c><C-\><C-n>
-command! Vspterm vsp | terminal
-command! Spterm	sp | terminal
 
 " simplify finding an init file
 command! Init tabe $MYVIMRC
