@@ -22,7 +22,11 @@ syntax on
 call plug#begin()
 
 	" colorschemes
-	Plug 'altercation/vim-colors-solarized'
+	Plug 'ericbn/vim-solarized'
+
+	" better statusline
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'Raimondi/delimitMate' " match parens
 	Plug 'junegunn/vim-easy-align'
@@ -38,8 +42,8 @@ call plug#begin()
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
 
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+	" upgraded f, F, t, T
+	Plug 'rhysd/clever-f.vim'
 
 	" Directory searching
 	Plug 'tpope/vim-vinegar'
@@ -202,8 +206,9 @@ set foldmethod=syntax
 "let c_no_comment_fold = 1
 
 " Solarized
-" NeoSolarized things
 try
+	" termguicolors causes putty to spaz out
+	" set termguicolors
 	set background=dark
 	colorscheme solarized
 catch
