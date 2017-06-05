@@ -232,7 +232,7 @@ nnoremap <space> <nop>
 let mapleader="\<space>"
 
 " Map noh to something
-nnoremap <silent> <Tab> :noh<CR>
+nnoremap <silent> \ :noh<CR>
 
 " Timestamp Keybindings
 inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
