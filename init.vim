@@ -45,8 +45,8 @@ call plug#begin()
 	" upgraded f, F, t, T
 	Plug 'rhysd/clever-f.vim'
 
-	" " completion manager
-	" Plug 'roxma/nvim-completion-manager'
+	" completion manager
+	Plug 'roxma/nvim-completion-manager'
 
 	" Directory searching
 	Plug 'tpope/vim-vinegar'
