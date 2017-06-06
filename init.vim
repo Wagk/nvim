@@ -45,9 +45,6 @@ call plug#begin()
 	" upgraded f, F, t, T
 	Plug 'rhysd/clever-f.vim'
 
-	" completion manager
-	Plug 'roxma/nvim-completion-manager'
-
 	" Directory searching
 	Plug 'tpope/vim-vinegar'
 	Plug 'dkprice/vim-easygrep'
@@ -55,9 +52,6 @@ call plug#begin()
 	" Git things
 	Plug 'tpope/vim-fugitive'
 	Plug 'airblade/vim-gitgutter'
-
-	" neovim only things
-	Plug 'hkupty/nvimux'
 
 	" tags management
 	Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
@@ -71,6 +65,14 @@ call plug#begin()
 	" にほんごはvimmuです。
 	Plug 'tyru/skk.vim'
 	Plug 'tyru/skkdict.vim'
+
+if has('nvim')
+	" neovim only things
+	Plug 'hkupty/nvimux'
+
+	" completion manager
+	Plug 'roxma/nvim-completion-manager'
+endif
 
 call plug#end()
 
@@ -286,12 +288,17 @@ endtry
 " CtrlP mappings
 let g:ctrlp_map = '<leader>e'
 
-" some nvim specific configs
-set inccommand=nosplit
+if has('nvim')
+	set inccommand=nosplit
 
-" terminal stuff
-tnoremap <Esc> <C-\><C-n>
-nnoremap <C-c> i<C-c><C-\><C-n>
+	" terminal stuff
+	tnoremap <Esc> <C-\><C-n>
+	nnoremap <C-c> i<C-c><C-\><C-n>
+endif
+
+" syntax rehighlighting
+noremap <silent> <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <silent> <F12> <C-o>:syntax sync fromstart<CR>
 
 " simplify finding an init file
 command! Init tabe $MYVIMRC
