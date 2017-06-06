@@ -273,8 +273,8 @@ endtry
 
 " Easyalign mappings
 try
-	vmap <leader>a <Plug>(EasyAlign)
-	nmap <leader>a <Plug>(EasyAlign)
+	vmap <leader>= <Plug>(EasyAlign)
+	nmap <leader>= <Plug>(EasyAlign)
 catch
 	echo "Easyalign not installed!"
 endtry
