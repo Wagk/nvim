@@ -289,6 +289,13 @@ endtry
 " CtrlP mappings
 let g:ctrlp_map = '<leader>e'
 
+" Gitgutter mappings
+try
+	" nnoremap <silent> <leader>. :GitGutterSignsToggle<CR>:GitGutterLineHighlightsToggle<CR>
+catch
+	echo "Gitgutter not installed!"
+endtry
+
 if has('nvim')
 	set inccommand=nosplit
 
