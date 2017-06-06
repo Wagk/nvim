@@ -68,10 +68,10 @@ call plug#begin()
 
 if has('nvim')
 	" neovim only things
-	Plug 'hkupty/nvimux'
+	" Plug 'hkupty/nvimux'
 
 	" completion manager
-	Plug 'roxma/nvim-completion-manager'
+	" Plug 'roxma/nvim-completion-manager'
 endif
 
 call plug#end()
@@ -216,6 +216,7 @@ try
 	" set termguicolors
 	set background=dark
 	colorscheme solarized
+	set cc=80
 catch
 	echo "Colorscheme Not Installed!"
 endtry
