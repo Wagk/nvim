@@ -45,6 +45,12 @@ call plug#begin()
 	" Filetype plugins
 	Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
 
+    " Textobjects
+    " kana/vim-textobj-user is a dependency for the below
+    Plug 'kana/vim-textobj-user'
+    Plug 'kana/vim-textobj-line'
+    Plug 'glts/vim-textobj-comment'
+
 	" upgraded f, F, t, T
 	Plug 'rhysd/clever-f.vim'
 
@@ -147,7 +153,7 @@ set backspace=indent,eol,start
 set autoindent
 
 " Use space instead of tabs,
-"set expandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
