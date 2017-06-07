@@ -38,6 +38,7 @@ call plug#begin()
 	Plug 'tpope/vim-abolish'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
+	Plug 'tpope/vim-unimpaired'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
@@ -45,6 +46,7 @@ call plug#begin()
 	" Filetype plugins
 	Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
     Plug 'stanangeloff/php.vim'
+    Plug 'pboettch/vim-cmake-syntax'
 
     " Visual block movement
     Plug 'matze/vim-move'
@@ -214,6 +216,7 @@ map Y y$
 "nnoremap ; :
 
 " maps ctrl-J to break a line at that point
+" TODO: make this indent smartly
 nnoremap <NL> i<CR><ESC>
 
 " Windows splitting
