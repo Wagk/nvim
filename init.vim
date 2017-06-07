@@ -28,28 +28,36 @@ call plug#begin()
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 
-	Plug 'Raimondi/delimitMate' " match parens
+    " Parenmatch plugins
+	Plug 'Raimondi/delimitMate'
+	Plug 'tpope/vim-surround'
+
 	Plug 'junegunn/vim-easy-align'
-	Plug 'michaeljsmith/vim-indent-object'
 	Plug 'nelstrom/vim-visual-star-search' " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
-	Plug 'tomtom/tcomment_vim'
 	Plug 'tpope/vim-abolish'
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
-	Plug 'tpope/vim-surround'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
 
 	" Filetype plugins
 	Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
+    Plug 'stanangeloff/php.vim'
+
+    " Visual block movement
+    Plug 'matze/vim-move'
+
+    " Commenting plugins
+	Plug 'tpope/vim-commentary'
 
     " Textobjects
     " kana/vim-textobj-user is a dependency for the below
     Plug 'kana/vim-textobj-user'
     Plug 'kana/vim-textobj-line'
     Plug 'glts/vim-textobj-comment'
+	Plug 'michaeljsmith/vim-indent-object'
 
 	" upgraded f, F, t, T
 	Plug 'rhysd/clever-f.vim'
@@ -123,8 +131,7 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
+" Highlight searches
 set hlsearch
 
 " Modelines have historically been a source of security vulnerabilities. As
@@ -213,11 +220,8 @@ nnoremap <NL> i<CR><ESC>
 set splitbelow
 set splitright
 
-"" Folding settings
+" Folding settings
 set foldmethod=syntax
-"set foldopen-=block
-"set nofoldenable
-"let c_no_comment_fold = 1
 
 " Solarized
 try
@@ -225,9 +229,9 @@ try
 	" set termguicolors
 	set background=dark
 	colorscheme solarized
+
+    " set colourcolumn
 	set cc=80
-catch
-	echo "Colorscheme Not Installed!"
 endtry
 
 " Realtime updates
@@ -253,8 +257,6 @@ nnoremap <F5> i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
 " vim-airline
 try
 	let g:airline_theme = 'solarized'
-catch
-	echo "vim-airline not installed!"
 endtry
 
 " No wordwrap
@@ -276,34 +278,21 @@ endtry
 " fugitive
 try
 	nnoremap <silent> <leader>, :Gstatus<CR>
-catch
-	echo "fugitive not installed!"
 endtry
 
 " Easyalign mappings
 try
 	vmap <leader>= <Plug>(EasyAlign)
 	nmap <leader>= <Plug>(EasyAlign)
-catch
-	echo "Easyalign not installed!"
 endtry
 
 " Argwrap things
 try
 	nnoremap <leader>q :ArgWrap<CR>
-catch
-	echo "Argwrap not installed!"
 endtry
 
 " CtrlP mappings
 let g:ctrlp_map = '<leader>e'
-
-" Gitgutter mappings
-try
-	" nnoremap <silent> <leader>. :GitGutterSignsToggle<CR>:GitGutterLineHighlightsToggle<CR>
-catch
-	echo "Gitgutter not installed!"
-endtry
 
 if has('nvim')
 	set inccommand=nosplit
