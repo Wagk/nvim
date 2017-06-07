@@ -31,7 +31,7 @@ call plug#begin()
 	Plug 'Raimondi/delimitMate' " match parens
 	Plug 'junegunn/vim-easy-align'
 	Plug 'michaeljsmith/vim-indent-object'
-	Plug 'nelstrom/vim-visual-star-search'              " use  # and * on visual selections
+	Plug 'nelstrom/vim-visual-star-search' " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
 	Plug 'tomtom/tcomment_vim'
 	Plug 'tpope/vim-abolish'
@@ -41,6 +41,9 @@ call plug#begin()
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
+
+	" Filetype plugins
+	Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
 
 	" upgraded f, F, t, T
 	Plug 'rhysd/clever-f.vim'
@@ -86,19 +89,19 @@ filetype indent plugin on
 "
 " These are highly recommended options.
 
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
+" Vim with default settings does not allow easy switching between multiple
+" files in the same editor window. Users can use multiple split windows or
+" multiple tab pages to edit multiple files, but it is still best to enable an
+" option to allow easier switching between files.
 "
 " One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
+" window and switch from an unsaved buffer without saving it first. Also
+" allows you to keep an undo history for multiple files when re-using the same
+" window in this way. Note that using persistent undo also lets you undo in
+" multiple files even in the same window, but is less efficient and is
+" actually designed for keeping undo history after closing Vim entirely. Vim
+" will complain if you try to quit without saving, and swap files will keep
+" you safe if your computer crashes.
 set hidden
 
 " Note that not everyone likes working this way (with the hidden option).
@@ -235,7 +238,7 @@ nnoremap <space> <nop>
 let mapleader="\<space>"
 
 " Map noh to something
-nnoremap <silent> \ :noh<CR>
+nnoremap <silent> <leader>\ :noh<CR>
 
 " Timestamp Keybindings
 inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
