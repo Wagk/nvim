@@ -296,6 +296,7 @@ endtry
 
 " CtrlP mappings
 let g:ctrlp_map = '<leader>e'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 if has('nvim')
 	set inccommand=nosplit
