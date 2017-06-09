@@ -202,6 +202,9 @@ set nonumber
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
+" Define some useful variables
+let s:MyVimConfigDir = substitute($MYVIMRC, 'init.vim', '', '')
+
 " Let me paste things repeatedly
 xnoremap p pgvy
 xnoremap P Pgvy
@@ -292,8 +295,9 @@ let g:ctrlp_map = '<leader>e'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Ultisnips mappings
-let g:UltiSnipsEditSplit = 'context'
 let g:UltiSnipsNoPythonWarning = 1
+let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsSnippetDirectories = [s:MyVimConfigDir . "UltiSnips"]
 
 if has('nvim')
 	set inccommand=nosplit
