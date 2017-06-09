@@ -85,13 +85,11 @@ call plug#begin()
 	Plug 'tyru/skk.vim'
 	Plug 'tyru/skkdict.vim'
 
-if has('nvim')
-	" neovim only things
-	" Plug 'hkupty/nvimux'
-
-	" completion manager
-	" Plug 'roxma/nvim-completion-manager'
-endif
+    " Snippets plugins
+    " TODO: This might be a mistake but whatever
+    Plug 'SirVer/ultisnips'
+    " Sometimes provided snippets don't make sense
+    " Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -270,13 +268,8 @@ set textwidth=0
 let delimitMate_expand_cr = 1
 
 " easytags
-try
-	let g:easytags_async = 1
-	let g:easytags_auto_highlight = 0
-endtry
-
-" always update working directory of vim files
-"set autochdir
+let g:easytags_async = 1
+let g:easytags_auto_highlight = 0
 
 " fugitive
 try
@@ -297,6 +290,10 @@ endtry
 " CtrlP mappings
 let g:ctrlp_map = '<leader>e'
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+" Ultisnips mappings
+let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsNoPythonWarning = 1
 
 if has('nvim')
 	set inccommand=nosplit
