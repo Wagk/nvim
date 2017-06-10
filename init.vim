@@ -164,6 +164,9 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set showbreak=>>>
+set breakindent
+set breakindentopt=sbr
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, ilocksct does what most users
