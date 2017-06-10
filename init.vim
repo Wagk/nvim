@@ -298,6 +298,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:UltiSnipsNoPythonWarning = 1
 let g:UltiSnipsEditSplit = 'context'
 let g:UltiSnipsSnippetDirectories = [s:MyVimConfigDir . "UltiSnips"]
+nnoremap <F10> :UltiSnipsEdit<CR>
 
 if has('nvim')
 	set inccommand=nosplit
