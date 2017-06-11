@@ -151,6 +151,7 @@ set nomodeline
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+set infercase
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -167,6 +168,9 @@ set softtabstop=4
 set showbreak=>>>
 set breakindent
 set breakindentopt=sbr
+
+" Set max syntax for performance reasons
+set synmaxcol=200
 
 " Stop certain movements from always going to the first character of a line.
 " While this behaviour deviates from that of Vi, ilocksct does what most users
@@ -214,6 +218,9 @@ xnoremap P Pgvy
 
 " Normalize Y operation with D
 map Y y$
+
+" shortcut line completion
+inoremap <C-l> <C-x><C-l>
 
 " Bind ; to :
 " We don't do this because ; in normal mode is next find
