@@ -160,12 +160,16 @@ set backspace=indent,eol,start
 " the same indent as the line you're currently on. Useful for READMEs, etc.
 set autoindent
 
+" wordwrap
+set wrap
+set textwidth=0
+
 " Use space instead of tabs,
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set showbreak=>>>
+set showbreak=\\>>
 set breakindent
 set breakindentopt=sbr
 
@@ -273,10 +277,6 @@ try
 	let g:airline_theme = 'solarized'
 endtry
 
-" No wordwrap
-set wrap!
-set textwidth=0
-
 " turn on delimitMate
 let delimitMate_expand_cr = 1
 
@@ -289,6 +289,14 @@ try
 	nnoremap <silent> <leader>, :Gstatus<CR>
 endtry
 
+" Gitgutter
+try
+    omap ih <Plug>GitGutterTextObjectInnerPending
+    omap ah <Plug>GitGutterTextObjectOuterPending
+    xmap ih <Plug>GitGutterTextObjectInnerVisual
+    xmap ah <Plug>GitGutterTextObjectOuterVisual
+endtry
+
 " Easyalign mappings
 try
 	vmap <leader>= <Plug>(EasyAlign)
@@ -297,7 +305,7 @@ endtry
 
 " Argwrap things
 try
-	nnoremap <leader>q :ArgWrap<CR>
+	nnoremap <leader>- :ArgWrap<CR>
 endtry
 
 " CtrlP mappings
