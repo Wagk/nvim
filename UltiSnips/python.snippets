@@ -1,0 +1,52 @@
+snippet if "if statement" b
+if ${1:cond}:
+	${0}
+endsnippet
+
+snippet elif "else if statement" b
+elif ${1:cond}:
+	${0}
+endsnippet
+
+snippet def "function declaration" bm
+def ${1:name}(${2:params}):
+	${0}
+
+	return
+endsnippet
+
+snippet try "try-catch" bm
+try:
+	${3}
+catch ${1:Exception} as ${2:e}:
+	${4}
+endsnippet
+
+snippet main "if-main" b
+if __name__ == "__main__":
+	${0}
+endsnippet
+
+snippet with "with block" b
+with ${1:expr} as ${2:alias}:
+	${0}
+endsnippet
+
+snippet for "for loop" b
+for ${1:elem} in ${2:range}:
+	${0}
+endsnippet
+
+snippet while "while loop" b
+while ${1:cond}:
+	${0}
+endsnippet
+
+snippet class "class" b
+class ${1:name}(${2:object}):
+
+	def __init__(self, ${3:params}):
+		${0}
+
+		return
+endsnippet
