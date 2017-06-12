@@ -39,9 +39,11 @@ call plug#begin()
 	Plug 'tpope/vim-repeat'
 	Plug 'tpope/vim-speeddating'
 	Plug 'tpope/vim-unimpaired'
+	Plug 'tpope/vim-sensible'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'FooSoft/vim-argwrap'
+
 
 	" Filetype plugins
 	Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
