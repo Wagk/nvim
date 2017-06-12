@@ -305,11 +305,11 @@ endtry
 
 " Argwrap things
 try
-	nnoremap <leader>- :ArgWrap<CR>
+	nnoremap <leader>+ :ArgWrap<CR>
 endtry
 
 " CtrlP mappings
-let g:ctrlp_map = '<leader>e'
+let g:ctrlp_map = '<leader>-'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Ultisnips mappings
