@@ -49,6 +49,7 @@ call plug#begin()
 	Plug 'docker/docker', {'rtp': '/contrib/syntax/vim/'}
     Plug 'stanangeloff/php.vim'
     Plug 'pboettch/vim-cmake-syntax'
+    Plug 'vim-python/python-syntax'
 
     " Visual block movement
     Plug 'matze/vim-move'
