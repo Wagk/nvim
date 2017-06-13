@@ -233,8 +233,7 @@ inoremap <C-l> <C-x><C-l>
 "nnoremap ; :
 
 " maps ctrl-J to break a line at that point
-" TODO: make this indent smartly
-nnoremap <NL> i<CR><ESC>
+nnoremap <NL> i<CR><ESC>==
 
 " Windows splitting
 set splitbelow
