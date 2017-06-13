@@ -241,6 +241,7 @@ set splitright
 
 " Folding settings
 set foldmethod=syntax
+set nofoldenable
 
 " Solarized
 try
