@@ -330,6 +330,12 @@ if has('nvim')
 	nnoremap <C-c> i<C-c><C-\><C-n>
 endif
 
+" gvim things
+if has('gui_running')
+    set guioptions=
+    set guifont=courier_new:h11
+endif
+
 " syntax rehighlighting
 noremap <silent> <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <silent> <F12> <C-o>:syntax sync fromstart<CR>
