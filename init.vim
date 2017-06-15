@@ -217,7 +217,11 @@ set nonumber
 set pastetoggle=<F11>
 
 " Define some useful variables
-let s:MyVimConfigDir = substitute($MYVIMRC, 'init.vim', '', '')
+if has('nvim')
+    let s:MyVimConfigDir = substitute($MYVIMRC, 'init.vim', '', '')
+else
+    let s:MyVimConfigDir = substitute($MYVIMRC, 'vimrc', '', '')
+endif
 
 " Let me paste things repeatedly
 xnoremap p pgvy
