@@ -50,6 +50,7 @@ call plug#begin()
     Plug 'stanangeloff/php.vim'
     Plug 'pboettch/vim-cmake-syntax'
     Plug 'vim-python/python-syntax'
+    Plug 'leafgarland/typescript-vim'
 
     " Visual block movement
     Plug 'matze/vim-move'
