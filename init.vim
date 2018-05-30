@@ -211,8 +211,8 @@ set t_vb=
 " press <Enter> to continue
 set cmdheight=2
 
-" Don't display line numbers on the left
-set nonumber
+" Do display line numbers on the left
+set number
 
 " Set initial window parameters
 if has("gui_running")
@@ -294,9 +294,9 @@ let mapleader="\<space>"
 " Map noh to something
 nnoremap <silent> <leader>\ :noh<CR>
 
-" Timestamp Keybindings
-inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
-nnoremap <F5> i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
+" " Timestamp Keybindings
+" inoremap <F5> <C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR>
+" nnoremap <F5> i<C-R>=strftime("%Y-%m-%dT%H:%M:%S")<CR><Esc>
 
 " vim-airline
 try
