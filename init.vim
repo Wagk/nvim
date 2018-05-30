@@ -137,6 +137,7 @@ set showcmd
 
 " Highlight searches
 set hlsearch
+nnoremap <ESC> :nohl<CR><ESC>
 
 " Modelines have historically been a source of security vulnerabilities. As
 " such, it may be a good idea to disable them and use the securemodelines
@@ -210,6 +211,21 @@ set cmdheight=2
 
 " Don't display line numbers on the left
 set nonumber
+
+" Set initial window parameters
+if has("gui_running")
+  " GUI is running or is about to start.
+  " Maximize gvim window (for an alternative on Windows, see simalt below).
+  set lines=999 columns=999
+else
+  " This is console Vim.
+  if exists("+lines")
+    set lines=50
+  endif
+  if exists("+columns")
+    set columns=100
+  endif
+endif
 
 " Quickly time out on keycodes, but never time out on mappings
 " set notimeout ttimeout ttimeoutlen=200
