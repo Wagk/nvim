@@ -53,7 +53,7 @@ call plug#begin()
     Plug 'leafgarland/typescript-vim'
 
     " Visual block movement
-    Plug 'matze/vim-move'
+    " Plug 'matze/vim-move'
 
     " Commenting plugins
 	Plug 'tpope/vim-commentary'
@@ -138,6 +138,8 @@ set showcmd
 " Highlight searches
 set hlsearch
 nnoremap <ESC> :nohl<CR><ESC>
+
+set incsearch
 
 " Modelines have historically been a source of security vulnerabilities. As
 " such, it may be a good idea to disable them and use the securemodelines
