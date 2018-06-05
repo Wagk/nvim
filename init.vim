@@ -23,6 +23,8 @@ call plug#begin()
 
 	" colorschemes
 	Plug 'ericbn/vim-solarized'
+    Plug 'iCyMind/NeoSolarized'
+    Plug 'plan9-for-vimspace/acme-colors'
 
 	" better statusline
 	Plug 'vim-airline/vim-airline'
@@ -32,7 +34,8 @@ call plug#begin()
 	Plug 'Raimondi/delimitMate'
 	Plug 'tpope/vim-surround'
 
-	Plug 'junegunn/vim-easy-align'
+    Plug 'tommcdo/vim-lion'
+	" Plug 'junegunn/vim-easy-align'
 	Plug 'nelstrom/vim-visual-star-search' " use  # and * on visual selections
 	Plug 'ntpeters/vim-better-whitespace'
 	Plug 'tpope/vim-abolish'
@@ -42,7 +45,9 @@ call plug#begin()
 	Plug 'tpope/vim-sensible'
 	Plug 'wellle/targets.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
-	Plug 'FooSoft/vim-argwrap'
+	" Plug 'FooSoft/vim-argwrap'
+
+    Plug 'tpope/vim-jdaddy'
 
 
 	" Filetype plugins
@@ -77,7 +82,8 @@ call plug#begin()
 	Plug 'airblade/vim-gitgutter'
 
 	" tags management
-	Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
+	" Plug 'xolox/vim-misc' | Plug 'xolox/vim-easytags'
+    Plug 'ludovicchabant/vim-gutentags'
 
 	" Folding plugins
 	Plug 'rayburgemeestre/phpfolding.vim'
@@ -211,8 +217,8 @@ set t_vb=
 " press <Enter> to continue
 set cmdheight=2
 
-" Do display line numbers on the left
-set number
+" Do not display line numbers on the left
+set nonumber
 
 " Set initial window parameters
 if has("gui_running")
@@ -228,6 +234,7 @@ else
     set columns=100
   endif
 endif
+
 
 " Quickly time out on keycodes, but never time out on mappings
 " set notimeout ttimeout ttimeoutlen=200
@@ -252,12 +259,9 @@ map Y y$
 " shortcut line completion
 inoremap <C-l> <C-x><C-l>
 
-" Bind ; to :
-" We don't do this because ; in normal mode is next find
-"nnoremap ; :
-
-" maps ctrl-J to break a line at that point
+" maps ctrl-j and Alt-j to break a line at that point
 nnoremap <NL> i<CR><ESC>==
+nnoremap <M-j> i<CR><ESC>==
 
 " Windows splitting
 set splitbelow
@@ -269,10 +273,14 @@ set nofoldenable
 
 " Solarized
 try
-	" termguicolors causes putty to spaz out
-	" set termguicolors
-	set background=dark
-	colorscheme solarized
+    " termguicolors causes putty to spaz out
+    set termguicolors
+    set background=dark
+    if has('nvim')
+        colorscheme NeoSolarized
+    else
+        colorscheme solarized
+    endif
 
     " set colourcolumn
 	set cc=80
@@ -318,30 +326,33 @@ endtry
 
 " Gitgutter
 try
+    let g:gitgutter_signs = 0
+    nmap ]h <Plug>GitGutterNextHunk
+    nmap [h <Plug>GitGutterPrevHunk
     omap ih <Plug>GitGutterTextObjectInnerPending
     omap ah <Plug>GitGutterTextObjectOuterPending
     xmap ih <Plug>GitGutterTextObjectInnerVisual
     xmap ah <Plug>GitGutterTextObjectOuterVisual
 endtry
 
-" Easyalign mappings
-try
-	vmap <leader>= <Plug>(EasyAlign)
-	nmap <leader>= <Plug>(EasyAlign)
-endtry
+" " Easyalign mappings
+" try
+" 	vmap <leader>= <Plug>(EasyAlign)
+" 	nmap <leader>= <Plug>(EasyAlign)
+" endtry
 
-" Argwrap things
-try
-	nnoremap <leader>+ :ArgWrap<CR>
-endtry
+" " Argwrap things
+" try
+" 	nnoremap <leader>+ :ArgWrap<CR>
+" endtry
 
 " CtrlP mappings
-let g:ctrlp_map = '<leader>-'
+let g:ctrlp_map = '_'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Ultisnips mappings
-let g:UltiSnipsNoPythonWarning = 1
-let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsNoPythonWarning    = 1
+let g:UltiSnipsEditSplit          = 'context'
 let g:UltiSnipsSnippetDirectories = [s:MyVimConfigDir . "UltiSnips"]
 nnoremap <F10> :UltiSnipsEdit<CR>
 
@@ -361,7 +372,4 @@ endif
 
 " syntax rehighlighting
 noremap <silent> <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <silent> <F12> <C-o>:syntax sync fromstart<CR>
-
-" simplify finding an init file
-command! Init tabe $MYVIMRC
+inor
