@@ -95,6 +95,8 @@ call plug#begin()
 	Plug 'tyru/skk.vim'
 	Plug 'tyru/skkdict.vim'
 
+    Plug 'tyru/restart.vim'
+
     " Snippets plugins
     " TODO: This might be a mistake but whatever
     Plug 'SirVer/ultisnips'
@@ -174,7 +176,7 @@ set backspace=indent,eol,start
 set autoindent
 
 " wordwrap
-set wrap
+set nowrap
 set textwidth=0
 
 " Use space instead of tabs,
@@ -182,9 +184,9 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set showbreak=\\>>
-set breakindent
-set breakindentopt=sbr
+" set showbreak=\\>>
+" set breakindent
+" set breakindentopt=sbr
 
 " Set max syntax for performance reasons
 set synmaxcol=200
@@ -212,6 +214,9 @@ set visualbell
 " this line is also included, vim will neither flash nor beep. If visualbell
 " is unset, this does nothing.
 set t_vb=
+
+" disable redrawing for macros
+set lazyredraw
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " press <Enter> to continue
@@ -283,7 +288,7 @@ try
     endif
 
     " set colourcolumn
-	set cc=80
+	" set colorcolumn=80
 endtry
 
 " Realtime updates
@@ -354,7 +359,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:UltiSnipsNoPythonWarning    = 1
 let g:UltiSnipsEditSplit          = 'context'
 let g:UltiSnipsSnippetDirectories = [s:MyVimConfigDir . "UltiSnips"]
-nnoremap <F10> :UltiSnipsEdit<CR>
+nnoremap <leader>ss :UltiSnipsEdit<CR>
 
 if has('nvim')
 	set inccommand=nosplit
@@ -372,4 +377,10 @@ endif
 
 " syntax rehighlighting
 noremap <silent> <F12> <Esc>:syntax sync fromstart<CR>
-inor
+inoremap <silent> <F12> <C-o>:syntax sync fromstart<CR>
+
+" Whitespace stripping on save
+let g:strip_whitespace_on_save = 1
+
+" simplify finding an init file
+command! Init tabe $MYVIMRC

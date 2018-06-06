@@ -1,7 +1,10 @@
-snippet docs "docstring" bm
+snippet c "comment string" bm
+#${0}
+endsnippet
+
+snippet d "docstring" bm
 """${0}
 """
-
 endsnippet
 
 snippet if "if statement" b
@@ -24,6 +27,15 @@ def ${1:name}(${2:params}):
 	${0}
 endsnippet
 
+snippet defm "member function declaration" bm
+def ${1:name}(self${2}):
+	${0}
+endsnippet
+
+snippet defl "lambda function declaration"
+lambda ${1:params}: ${2:expr}
+endsnippet
+
 snippet try "try-catch" bm
 try:
 	${3}
@@ -31,7 +43,7 @@ except ${1:Exception} as ${2:e}:
 	${4}
 endsnippet
 
-snippet main "if-main" b
+snippet ifm "if-main" b
 if __name__ == "__main__":
 	${0}
 endsnippet
@@ -49,6 +61,10 @@ endsnippet
 snippet while "while loop" b
 while ${1:cond}:
 	${0}
+endsnippet
+
+snippet print "printing"
+print("$0")
 endsnippet
 
 snippet class "class" bm
